@@ -2,14 +2,9 @@
 
 public class HealthScript : MonoBehaviour
 {
-    public float Health;
-
-    private void OnCollisionEnter(Collision other) 
-    {
-        DamageHealth("Ball", other.collider);
-    }
-
-
+    public GameObject Destroyer;
+    public int Health;
+    private SpriteRenderer image;
     private void OnCollisionExit(Collision other) 
     {
         DamageHealth("Ball", other.collider);
@@ -20,6 +15,8 @@ public class HealthScript : MonoBehaviour
     {
         if (other.CompareTag(tag))
         {
+            var ball = other.GetComponent<BallController>();
+            ball.IsTeleport = false;
             var damage = other.GetComponent<DamgeScript>();
             Health -= damage.TakeDamage();
             Death();
@@ -30,6 +27,7 @@ public class HealthScript : MonoBehaviour
     {
         if (Health < 1)
         {
+            Instantiate(Destroyer, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

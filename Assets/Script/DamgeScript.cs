@@ -2,9 +2,9 @@
 
 public class DamgeScript : MonoBehaviour
 {
-    public float damage;
+    public int damage;
 
-    public float TakeDamage()
+    public int TakeDamage()
     {
         return damage;
     }

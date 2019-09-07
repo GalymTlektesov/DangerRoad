@@ -1,35 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
     private Rigidbody ball;
     public float speed;
+    public float jumpForce;
 
-    private void Awake()
+    public float speedRotation;
+
+    public bool IsTeleport = true;
+
+    private float rotY;
+
+    private void Awake() 
     {
         ball = GetComponent<Rigidbody>();
-    }
-    
-
-    void Update()
-    {
-        
+        rotY = ball.rotation.y;
     }
 
     private void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");// горизонтальное перемещение
-        float moveVertical = Input.GetAxis("Vertical");// вертикальное перемещение 
+        var rotation = ball.rotation; 
 
-        ball.velocity = new Vector3(moveHorizontal, 0, moveVertical) * speed; // движение и скорость движение
+        //ball.velocity = new Vector3(moveHorizontal, -28, moveVertical) * speed; // движение и скорость движение
 
-        /*float xPosition = Mathf.Clamp(ball.position.x, xmin, xmax);// вращение по осм х
-        float zPosition = Mathf.Clamp(ball.position.z, zmin, zmax);// вращение по оси z 
+        if(Input.GetButton("Jump"))
+        {
+            ball.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        }
 
-        ball.position = new Vector3(xPosition, 0, zPosition);// истиное перемещение 
-        
-        ball.rotation = Quaternion.Euler(ball.velocity.z * tilt, 0, -ball.velocity.x * tilt);// истиное вращение*/
+        if(Input.GetKey(KeyCode.W)) { ball.AddForce(transform.forward * speed); }
+        if(Input.GetKey(KeyCode.S)) { ball.AddForce(transform.forward * -speed); }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            rotY += 90;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            rotY -= 90;
+        }
+        ball.rotation = Quaternion.Lerp(rotation, Quaternion.Euler(0, rotY, 0), speedRotation * Time.deltaTime);
     }
 }
