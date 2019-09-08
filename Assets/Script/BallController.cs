@@ -29,8 +29,8 @@ public class BallController : MonoBehaviour
             ball.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
 
-        if(Input.GetKey(KeyCode.W)) { ball.AddForce(transform.forward * speed); }
-        if(Input.GetKey(KeyCode.S)) { ball.AddForce(transform.forward * -speed); }
+        if(Input.GetKey(KeyCode.W)) { ball.AddForce(transform.forward * speed, ForceMode.VelocityChange); }
+        if(Input.GetKey(KeyCode.S)) { ball.AddForce(transform.forward * -speed, ForceMode.VelocityChange); }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -41,6 +41,6 @@ public class BallController : MonoBehaviour
         {
             rotY -= 90;
         }
-        ball.rotation = Quaternion.Lerp(rotation, Quaternion.Euler(0, rotY, 0), speedRotation * Time.deltaTime);
+        ball.rotation = Quaternion.Lerp(rotation, Quaternion.Euler(rotation.x, rotY, rotation.z), speedRotation * Time.deltaTime);
     }
 }
