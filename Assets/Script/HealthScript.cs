@@ -1,13 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
     public GameObject Destroyer;
     public int Health;
     private SpriteRenderer image;
-    private void OnCollisionExit(Collision other) 
+
+    
+    private void OnTriggerExit(Collider other) 
     {
-        DamageHealth("Ball", other.collider);
+        DamageHealth("Ball", other);
     }
 
 

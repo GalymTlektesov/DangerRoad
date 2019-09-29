@@ -1,22 +1,26 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class TeleportScript : MonoBehaviour
 {
     public TeleportScript teleport;
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.collider.CompareTag("Ball"))
+        if (other.CompareTag("Ball"))
         {
-            var ball = other.collider.GetComponent<BallController>();
+            var PosX = teleport.transform.position.x;
+            var PosZ = teleport.transform.position.z;
+            var PosY = teleport.transform.position.y;
+            var ScaleSY = other.transform.lossyScale.y;
+
+            var ball = other.GetComponent<BallController>();
             if (!ball.IsTeleport)
             {
-                var PosX = teleport.transform.position.x;
-                var PosZ = teleport.transform.position.z;
-                var PosY = other.transform.position.y;
-                other.transform.position = new Vector3(PosX, PosY, PosZ);
+                ball.IsTeleport = true;
+                Debug.Log(other.name);
+                other.transform.position = new Vector3(PosX, PosY + ScaleSY, PosZ);
             }
-            ball.IsTeleport = true;
         }
     }
 }

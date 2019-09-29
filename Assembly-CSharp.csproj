@@ -71,9 +71,12 @@
     <Compile Include="Assets\Script\DamgeScript.cs" />
     <Compile Include="Assets\Script\Finish.cs" />
     <Compile Include="Assets\Script\HealthScript.cs" />
+    <Compile Include="Assets\Script\LevelGame.cs" />
     <Compile Include="Assets\Script\MotionScript.cs" />
-    <Compile Include="Assets\Script\MoveCamera.cs" />
+    <Compile Include="Assets\Script\MoveScript.cs" />
     <Compile Include="Assets\Script\RestartGame.cs" />
+    <Compile Include="Assets\Script\RotateScript.cs" />
+    <Compile Include="Assets\Script\StartMenuScript.cs" />
     <Compile Include="Assets\Script\TeleportScript.cs" />
     <Compile Include="Assets\Script\TransformScript.cs" />
     <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
