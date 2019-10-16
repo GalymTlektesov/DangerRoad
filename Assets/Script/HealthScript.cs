@@ -4,6 +4,8 @@ public class HealthScript : MonoBehaviour
 {
     public GameObject Destroyer;
     public int Health;
+
+    public int Def;
     private SpriteRenderer image;
 
     
@@ -20,7 +22,7 @@ public class HealthScript : MonoBehaviour
             var ball = other.GetComponent<BallController>();
             ball.IsTeleport = false;
             var damage = other.GetComponent<DamgeScript>();
-            Health -= damage.TakeDamage();
+            Health -= damage.TakeDamage() - Def;
             Death();
         }
     }

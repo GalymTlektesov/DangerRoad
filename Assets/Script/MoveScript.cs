@@ -6,11 +6,12 @@ public class MoveScript : MonoBehaviour
     public float speed;
     public float speedRotate;
 
+    private Animator anim;
     private bool Up;
     private bool Down;
     void Awake()
     {
-
+        anim = GetComponent<Animator>();
         ball = GetComponent<Rigidbody>();
     }
 
@@ -22,7 +23,7 @@ public class MoveScript : MonoBehaviour
         if (Up)
         {
             ball.AddForce(transform.forward * speed);
-            ball.rotation = Quaternion.Euler(xRote, yRote + speedRotate * Time.deltaTime, zRote);
+            ball.rotation = Quaternion.Lerp(ball.rotation, Quaternion.Euler(++xRote, yRote, zRote), speedRotate * Time.deltaTime);
         }
         if(Down)
         {

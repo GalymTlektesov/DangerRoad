@@ -4752,7 +4752,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &1182114494
+--- !u!114 &1182994381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4764,7 +4764,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e038be80cb61407eafa1984c32d93f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleport: {fileID: 1182114494}
+  teleport: {fileID: 0}
+--- !u!114 &1182994382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937772304029812307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e39f90b9e794443927e0c9a92ada5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destroyer: {fileID: 0}
+  Health: 1000
+  Def: 1000
 --- !u!1001 &4344989165894436786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4837,33 +4852,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1479873348981916157, guid: 8cdaff26f08994591a94e560b97bc606,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1479873348981916154, guid: 8cdaff26f08994591a94e560b97bc606,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1479873348981916158, guid: 8cdaff26f08994591a94e560b97bc606,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1479873348981916158, guid: 8cdaff26f08994591a94e560b97bc606,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1479873348981916159, guid: 8cdaff26f08994591a94e560b97bc606,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 80142df55ab14439f971fc5b20e61bd9, type: 2}
-    m_RemovedComponents:
-    - {fileID: 1479873348981916154, guid: 8cdaff26f08994591a94e560b97bc606, type: 3}
+    - target: {fileID: 7420675367521854257, guid: 8cdaff26f08994591a94e560b97bc606,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cdaff26f08994591a94e560b97bc606, type: 3}
 --- !u!1 &2937772304029812307 stripped
 GameObject:

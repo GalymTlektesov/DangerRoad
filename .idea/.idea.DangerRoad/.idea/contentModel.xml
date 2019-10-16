@@ -4,15 +4,32 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Lava_Flowing_Shader" t="Include">
+          <e p="ReadMe.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="ScrollingUVs_Layers.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Diffuse_Lava_Distort.shader" t="Include" />
+            <e p="Unlit_Lava_Distort.shader" t="Include" />
+            <e p="Unlit_Lava_Distort_Transparent.shader" t="Include" />
+            <e p="Unlit_Lava_Simple.shader" t="Include" />
+          </e>
+        </e>
         <e p="Script" t="Include">
           <e p="BallController.cs" t="Include" />
           <e p="Controller.cs" t="Include" />
           <e p="DamgeScript.cs" t="Include" />
           <e p="Finish.cs" t="Include" />
           <e p="HealthScript.cs" t="Include" />
-          <e p="MoveCamera.cs" t="Include" />
+          <e p="LevelGame.cs" t="Include" />
+          <e p="MotionScript.cs" t="Include" />
+          <e p="MoveScript.cs" t="Include" />
           <e p="RestartGame.cs" t="Include" />
+          <e p="RotateScript.cs" t="Include" />
+          <e p="StartMenuScript.cs" t="Include" />
           <e p="TeleportScript.cs" t="Include" />
+          <e p="TransformScript.cs" t="Include" />
         </e>
       </e>
       <e p="DangerRoad.sln" t="IncludeFlat" />

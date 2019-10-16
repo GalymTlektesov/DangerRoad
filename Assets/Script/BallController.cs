@@ -2,5 +2,5 @@
 
 public class BallController : MonoBehaviour
 {
-        public bool IsTeleport;
+    public bool IsTeleport;
 }
