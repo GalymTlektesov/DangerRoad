@@ -4765,7 +4765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleport: {fileID: 0}
---- !u!114 &1182994382
+--- !u!114 &2937772304029812296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4862,7 +4862,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1479873348981916154, guid: 8cdaff26f08994591a94e560b97bc606, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8cdaff26f08994591a94e560b97bc606, type: 3}
 --- !u!1 &2937772304029812307 stripped
 GameObject:

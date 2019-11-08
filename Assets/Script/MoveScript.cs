@@ -23,7 +23,9 @@ public class MoveScript : MonoBehaviour
         if (Up)
         {
             ball.AddForce(transform.forward * speed);
-            ball.rotation = Quaternion.Lerp(ball.rotation, Quaternion.Euler(++xRote, yRote, zRote), speedRotate * Time.deltaTime);
+            ball.rotation = Quaternion.Lerp(ball.rotation,
+                                            Quaternion.Euler(xRote + 20, yRote, zRote),
+                                            speedRotate * Time.deltaTime);
         }
         if(Down)
         {
